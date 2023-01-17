@@ -1,0 +1,41 @@
+pipeline 
+{
+    agent any
+
+    stages 
+    {
+        stage('Develop') 
+        {
+            steps 
+            {
+                echo 'Developing the Application through Java'
+            }
+        }
+        stage('Build') 
+        {
+            steps 
+            {
+                echo 'Building the Application through JVM'
+            }
+        }
+        stage('Test') 
+        {
+            steps 
+            {
+                echo 'Testing the Application through Eclipse'
+            }
+        }
+        stage('Deploy') 
+        {
+            steps 
+            {
+                echo 'Deploying the Application through Ant'
+            }
+        }
+    }
+
+    failure
+    {
+        emailext body: 'Here by informing the status of pipeline named as "Simple Pipeline" executed through the Jenkin Pipeline methodology.', subject: 'Pipeline Status', to: 'abhaydeshpande1998@gmail.com'
+    }
+}
