@@ -37,7 +37,7 @@ pipeline
     post
     {
     
-        failure
+        always
         {
             emailext body: 'Here by informing the status of pipeline named as "Simple Pipeline" executed through the Jenkin Pipeline methodology.', subject: 'Pipeline Status', to: 'abhaydeshpande1998@gmail.com'
         }
